@@ -92,14 +92,14 @@ export default {
 .box {
   width: 100%;
   height: 100vh;
-  background-image: url(/public/back.png);
+  background: url('/public/11.png');
   background-size: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   .login-box {
-    width: 400px;
-    height: 300px;
+    width: 500px;
+    height: 350px;
     padding: 20px;
     text-align: center;
     background-color: #d0d1dadf;

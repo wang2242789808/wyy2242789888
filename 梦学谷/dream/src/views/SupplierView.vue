@@ -34,6 +34,8 @@
         </template>
       </el-table-column>
     </el-table>
+
+    
     <el-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"

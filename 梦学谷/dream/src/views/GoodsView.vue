@@ -1,9 +1,9 @@
 
 <template>
   <div>
-    <el-input style="width: 180px" placeholder="供应商名称"></el-input>
-    <el-input style="width: 180px" placeholder="联系人"></el-input>
-    <el-input style="width: 180px" placeholder="联系电话"></el-input>
+    <el-input style="width: 180px" placeholder="商品名称" v-model="name"></el-input>
+    <el-input style="width: 180px" placeholder="商品编号" v-model="code"></el-input>
+    <el-input style="width: 180px" placeholder="选择供应商" v-model="supplierName"></el-input>
     <el-button type="primary">查询</el-button>
     <el-button type="primary" @click="dialogFormVisible = true">新增</el-button>
     <el-button>重置</el-button>
@@ -102,6 +102,9 @@ export default {
   components: {},
   data() {
     return {
+      supplierName:"",
+      name:"",
+      code:"",
       tableData: [],
       queryInfo: {
         name: "",
