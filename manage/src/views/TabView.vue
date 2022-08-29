@@ -112,10 +112,18 @@ export default {
 
   computed: {
     ...mapState("tabList", {
-      tabLists: (state) => state.tabLists,
+      // tabLists: (state) => state.tabLists,
       list: (state) => state.list,
       delList: (state) => state.delList,
     }),
+    tabLists:{
+      get(){
+        return this.$store.state.tabList.tabLists
+      },
+      set(val){
+         this.$store.state.tabList.tabLists=val
+      }
+    }
   },
   methods: {
     ...mapMutations("tabList", [
@@ -190,6 +198,7 @@ export default {
     getTabList() {
       axios.get("/text.json").then((res) => {
         console.log(res);
+        // this.$store.state.tabList.tabLists=res.data
         this.tabLists = res.data;
         console.log(this.tabLists);
       });

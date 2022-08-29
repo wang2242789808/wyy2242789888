@@ -7,7 +7,7 @@
       </el-aside>
       <el-container>
         <el-header>
-          <Header></Header>
+          <Header :tabList="tabList"></Header>
         </el-header>
         <el-main>
           <ul>
@@ -71,6 +71,7 @@ export default {
       this.$router.push(`${val.path}`)
     },
   },
+
 };
 </script>
 <style scoped lang='scss'>

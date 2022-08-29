@@ -23,7 +23,21 @@
             >
           </el-form-item>
         </el-form>
+<div class="bottom">
+  
+        <p>测试权限账号：</p>
+<p>提供三种权限账号：</p>
+<p>1. 超级管理员账号： super-admin</p>
+<p>2. 管理员账号：admin</p>
+<p>3. 测试可配置账号：test</p>
+<p>密码统一为：123456</p>
+<p>导入用户账号：</p>
+<p>可使用导入的用户名登录</p>
+<p>密码统一为：123456</p>
+<p>注意：导入用户区分中英文库！！！！</p>
+</div>
       </div>
+      
     </div>
   </div>
 </template>
@@ -55,7 +69,7 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          if(this.ruleForm.username==" super-admin"&&this.ruleForm.password=="123456"){
+          if(this.ruleForm.username=="admin"&&this.ruleForm.password=="123456"){
               sessionStorage.setItem('token',this.ruleForm.username)
               this.$message.success('登录成功')
           }
@@ -71,6 +85,9 @@ export default {
 };
 </script>
 <style scoped lang='scss'>
+.bottom{
+  margin-left: 100px;
+}
 .login-btn{
     width: 100%;
 }

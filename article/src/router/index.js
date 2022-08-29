@@ -16,6 +16,7 @@ const routes = [
     name: 'about',
     component: () => import('../views/AboutView.vue'),
     redirect:'/per',
+    
     children: [
       {
         path: '/per',

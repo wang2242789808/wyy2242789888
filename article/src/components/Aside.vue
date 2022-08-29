@@ -10,7 +10,8 @@
     </p>
 
     <el-menu
-      default-active="2"
+      :default-active="active"
+
       class="el-menu-vertical-demo"
       background-color="#304156"
       text-color="#fff"
@@ -25,7 +26,9 @@
         <i class="el-icon-s-data"></i>
         <span slot="title">数据可视化</span>
       </el-menu-item>
-      <el-submenu>
+
+
+      <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-user-solid"></i>
           <span>用户</span>
@@ -44,7 +47,7 @@
           </el-menu-item>
       </el-submenu>
 
-      <el-submenu>
+      <el-submenu index="2">
         <template slot="title">
           <i class="el-icon-s-comment"></i>
           <span>文章</span>
@@ -70,6 +73,7 @@ export default {
   components: {},
   data() {
     return {
+      active:"",
       tabs:[
         {
           title:"个人中心",
@@ -87,6 +91,15 @@ export default {
   created() {},
   mounted() {},
   methods: {},
+    watch:{
+    $route:{
+      deep:true,
+      immediate:true,
+      handler(val){
+        this.active=val.path
+      }
+    }
+  }
 };
 </script>
 <style scoped lang='scss'>
